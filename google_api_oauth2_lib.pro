@@ -28,4 +28,3 @@ FORMS += \
     logindialog.ui
 
 
-
