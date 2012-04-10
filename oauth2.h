@@ -16,6 +16,7 @@ public:
     bool isAuthorized();
     void startLogin(bool bForce);
 
+    //Functions to set application's details.
     void setScope(const QString& scope);
     void setClientID(const QString& clientID);
     void setRedirectURI(const QString& redirectURI);
