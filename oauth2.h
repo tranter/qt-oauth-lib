@@ -26,6 +26,7 @@ public:
     QString loginUrl();
 
 signals:
+    //Signal that is emitted when login is ended OK.
     void loginDone();
 
 private slots:
