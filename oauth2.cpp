@@ -66,7 +66,6 @@ bool OAuth2::isAuthorized()
 
 void OAuth2::startLogin(bool bForce)
 {
-    qDebug() << "OAuth2::startLogin";
     QSettings settings(m_strCompanyName, m_strAppName);
     QString str = settings.value("access_token", "").toString();
 
