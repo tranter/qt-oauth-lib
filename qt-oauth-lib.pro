@@ -6,7 +6,7 @@
 
 QT       += webkit
 
-TARGET = google_api_oauth2_lib
+TARGET = qt-oauth-lib
 TEMPLATE = lib
 CONFIG += staticlib
 
