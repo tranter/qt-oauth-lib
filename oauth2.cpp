@@ -3,6 +3,7 @@
 #include <QApplication>
 #include "logindialog.h"
 #include <QSettings>
+#include <QMessageBox>
 
 OAuth2::OAuth2(QWidget* parent)
 {
@@ -16,6 +17,7 @@ OAuth2::OAuth2(QWidget* parent)
     m_strAppName = "Test Google API Client"; //Your application name here
 
     m_pLoginDialog = new LoginDialog(parent);
+    m_pParent = parent;
     connect(m_pLoginDialog, SIGNAL(accessTokenObtained()), this, SLOT(accessTokenObtained()));
 }
 
@@ -70,6 +72,14 @@ void OAuth2::startLogin(bool bForce)
     QString str = settings.value("access_token", "").toString();
 
     qDebug() << "OAuth2::startLogin, token from Settings" << str;
+    if(m_strClientID == "YOUR_CLIENT_ID_HERE" || m_strRedirectURI == "YOUR_REDIRECT_URI_HERE")
+    {
+        QMessageBox::warning(m_pParent, "Warning",
+                             "To work with application you need to register your own application in <b>Google</b>.\n"
+                             "Learn more from <a href='http://code.google.com/p/qt-google-tasks/wiki/HowToRegisterYourAppIicationInGoogle'>here</a>");
+        return;
+    }
+
 
     if(str.isEmpty() || bForce)
     {
