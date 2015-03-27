@@ -1,10 +1,6 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2012-01-18T16:34:48
-#
-#-------------------------------------------------
-
 QT       += webkit
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkitwidgets
 
 TARGET = qt-oauth-lib
 TEMPLATE = lib
